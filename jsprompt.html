@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <script>
+        function deleteConfirm() {
+            let confirmText = "";
+
+            if (confirm("Are you sure you want to delete this ?")) {
+                confirmText ="Item Deleted"
+            } else {
+                confirmText = "Operation Canceled"
+            }
+            document.getElementById('confirmText').innerHTML = confirmText;
+        }
+
+        // Prompt Box
+
+        function promptMe() {
+            let promptText = ""
+            let promptMessage = prompt("Please Enter your age", "30")
+            if(promptMessage == null || promptMessage =="") {
+                promptText = "You have not enterd anything";
+
+            } else {
+                promptText = `Your are ${promptMessage} years old`; 
+            }
+            document.getElementById('promptText').innerHTML = promptText;
+
+        }
+
+        //
+        function getCurrentDate() {
+            let today = new Date()
+            document.getElementById('fullDate').innerHTML =  today;
+            document.getElementById('dayDate').innerHTML = 'Day : ' + today.getDate();
+            document.getElementById('monthDate').innerHTML = 'Month : ' + today.getMonth() + 1;
+            document.getElementById('fullYearDate').innerHTML = 'Year :  ' + today.getFullYear();
+
+        }
+
+        function getCurrentTime() {
+            let today = new Date()
+            document.getElementById('fullTime').innerHTML =  today;
+            document.getElementById('hoursTime').innerHTML = 'Hours : ' + today.getHours();
+            document.getElementById('minutesTime').innerHTML = 'Minutes : ' + today.getMinutes();
+            document.getElementById('secondsTime').innerHTML = 'Seconds :  ' + today.getSeconds();
+
+        }
+
+    </script>
+    
+    <h2> Confirm box</h2>
+    <button onclick="deleteConfirm()">Click to Confirm</button>
+    <p id="confirmText"></p>
+    <hr>
+    <h2> Prompt Box</h2>
+    <button onclick="promptMe()">Prompt</button>
+    <p id="promptText"></p>
+    <hr>
+    <h2> Get Current Date</h2>
+    <button onclick="getCurrentDate()">Click Here</button>
+    <p id="fullDate"></p>
+    <p id="dayDate"></p>
+    <p id="monthDate"></p>
+    <p id="fullYearDate"></p>
+    <hr>
+    <h2> Get Current Time</h2>
+    <button onclick="getCurrentTime()">Click Here</button>
+    <p id="fullTime"></p>
+    <p id="hoursTime"></p>
+    <p id="minutesTime"></p>
+    <p id="secondsTime"></p>
+</body>
+</html>
